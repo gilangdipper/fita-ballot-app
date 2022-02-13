@@ -8,7 +8,7 @@ const AwardList: FC<IAwardList> = ({ awardData }) => {
     <AwardListWrapper>
       {awardData.map((award) => (
         <div key={award.id} className="award-section">
-          <div className="award-section_title">{award.title}</div>
+          <div className="title">{award.title}</div>
           <MovieList movies={award.items} />
         </div>
       ))}
