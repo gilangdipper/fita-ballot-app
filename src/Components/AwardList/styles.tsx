@@ -8,9 +8,12 @@ export const AwardListWrapper = styled.div`
 
     .title {
       font-size: 24px;
-      background: #406882;
+      background: #b4b897;
       padding: 10px 20px;
       border-radius: 4px;
+      margin-bottom: 10px;
+      font-style: italic;
+      font-weight: bold;
     }
   }
 `

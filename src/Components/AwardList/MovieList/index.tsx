@@ -8,7 +8,11 @@ const MovieList: FC<IMovieList> = ({ movies }) => {
     <MovieListWrapper>
       {movies.map((movie) => (
         <div key={movie.id} className="movie-box">
-          <div className="movie-box_title">{movie.title}</div>
+          <div className="movie-card">
+            <div className="movie-title">{movie.title}</div>
+            <img alt="movie" src={movie.photoUrL} />
+            <button type="button">Nominate!</button>
+          </div>
         </div>
       ))}
     </MovieListWrapper>
