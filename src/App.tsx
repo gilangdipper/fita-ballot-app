@@ -1,25 +1,29 @@
-import { useEffect } from 'react'
-
-import { AppWrapper } from './App.style'
-
-import Ballot from './Components/Ballot/Ballot'
+import { useEffect, useState } from 'react'
 
 import { getBallotData } from './services/ballot'
+import AwardList from './components/AwardList'
+
+import { AppWrapper } from './App.style'
+import { IAwardResponses } from './interfaces'
 
 function App() {
+  const [awardData, setAwardData] = useState<IAwardResponses['items']>([])
   useEffect(() => {
-    getBallotData()
-      .then((data) => {
-        console.log('//', data)
-      })
-      .catch((error) => {
-        console.log('//', error)
-      })
+    let isMounted = true
+
+    getBallotData().then((data) => {
+      if (isMounted) {
+        setAwardData(data.items)
+      }
+    })
+
+    return () => {
+      isMounted = false
+    }
   }, [])
-  // Feel free to remove the contents of the header tag to make more room for your code
   return (
     <AppWrapper>
-      <Ballot />
+      <AwardList awardData={awardData} />
     </AppWrapper>
   )
 }
