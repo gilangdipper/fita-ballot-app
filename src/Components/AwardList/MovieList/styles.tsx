@@ -30,10 +30,15 @@ export const MovieListWrapper = styled.div`
         object-fit: cover;
       }
 
+      &.selected,
       &:hover {
         background: #34ac9c;
         color: #cccccc;
         transform: scale(1.05);
+      }
+
+      &.selected {
+        border: 1px solid #ffffff;
       }
 
       button {

@@ -8,6 +8,9 @@ import { IAwardResponses } from './interfaces'
 
 function App() {
   const [awardData, setAwardData] = useState<IAwardResponses['items']>([])
+  const [movieNominated, setMovieNominated] = useState<Record<string, string>>(
+    {},
+  )
   useEffect(() => {
     let isMounted = true
 
@@ -23,7 +26,16 @@ function App() {
   }, [])
   return (
     <AppWrapper>
-      <AwardList awardData={awardData} />
+      <AwardList
+        awardData={awardData}
+        nominateMovie={(categoryId, movieId) =>
+          setMovieNominated((previousState) => ({
+            ...previousState,
+            [categoryId]: movieId,
+          }))
+        }
+        movieNominated={movieNominated}
+      />
     </AppWrapper>
   )
 }
