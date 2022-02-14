@@ -13,3 +13,5 @@ export interface IAward {
 export interface IAwardResponses {
   items: IAward[]
 }
+
+export type TMovieNominated = { awardTitle: IAward['title']; movie: IMovie }

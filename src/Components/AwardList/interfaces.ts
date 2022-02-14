@@ -1,7 +1,8 @@
-import { IAwardResponses } from '../../interfaces'
+import { IAwardResponses, TMovieNominated } from '../../interfaces'
 
 export interface IAwardList {
   awardData: IAwardResponses['items']
-  nominateMovie: (categoryId: string, movieId: string) => void
-  movieNominated: Record<string, string>
+  nominateMovie: (categoryId: string, movieNominated: TMovieNominated) => void
+  movieNominated: Record<string, TMovieNominated>
+  displayModal: () => void
 }

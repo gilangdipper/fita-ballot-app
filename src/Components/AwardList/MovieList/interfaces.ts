@@ -1,7 +1,7 @@
-import { IMovie } from '../../../interfaces'
+import { IMovie, TMovieNominated } from '../../../interfaces'
 
 export interface IMovieList {
   movies: IMovie[]
-  onClick: (movieId: string) => void
-  movieIdSelected: string
+  onClick: (movie: TMovieNominated['movie']) => void
+  movieIdSelected?: string
 }

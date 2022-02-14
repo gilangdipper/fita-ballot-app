@@ -8,6 +8,7 @@ const AwardList: FC<IAwardList> = ({
   awardData,
   nominateMovie,
   movieNominated,
+  displayModal,
 }) => {
   return (
     <AwardListWrapper>
@@ -18,12 +19,20 @@ const AwardList: FC<IAwardList> = ({
             <div className="title">{award.title}</div>
             <MovieList
               movies={award.items}
-              onClick={(movieId) => nominateMovie(award.id, movieId)}
-              movieIdSelected={movieNominated[award.id]}
+              onClick={(movie) =>
+                nominateMovie(award.id, {
+                  awardTitle: award.title,
+                  movie,
+                })
+              }
+              movieIdSelected={movieNominated[award.id]?.movie.id}
             />
           </div>
         ))}
       </Suspense>
+      <button type="button" onClick={() => displayModal()}>
+        Submit ballot
+      </button>
     </AwardListWrapper>
   )
 }

@@ -17,7 +17,7 @@ const MovieList: FC<IMovieList> = ({ movies, onClick, movieIdSelected }) => {
           >
             <div className="movie-title">{movie.title}</div>
             <img alt="movie" src={movie.photoUrL} />
-            <button type="button" onClick={() => onClick(movie.id)}>
+            <button type="button" onClick={() => onClick(movie)}>
               Nominate!
             </button>
           </div>
