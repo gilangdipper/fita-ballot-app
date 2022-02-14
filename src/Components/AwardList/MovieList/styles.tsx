@@ -58,4 +58,15 @@ export const MovieListWrapper = styled.div`
       }
     }
   }
+
+  @media screen and (max-width: 425px) {
+    .movie-box {
+      flex: 0 0 50%;
+
+      .movie-card {
+        img {
+          height: auto;
+        }
+    }
+  }
 `
