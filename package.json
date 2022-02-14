@@ -2,6 +2,7 @@
   "name": "react-take-home",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://gilangdipper.github.io/fita-ballot-app/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -13,6 +14,7 @@
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.6",
     "enzyme": "^3.11.0",
     "express": "^4.17.1",
+    "gh-pages": "^3.2.3",
     "nodemon": "^2.0.6",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -30,7 +32,9 @@
     "backend": "nodemon ./api/index.js",
     "lint": "eslint '**/*.{js,jsx,ts,tsx}'",
     "lint:fix": "eslint --quiet --fix '**/*.{js,jsx,ts,tsx}'",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -63,7 +67,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
-    "prettier": "^2.5.1",
-    "husky": "^7.0.0"
+    "husky": "^7.0.0",
+    "prettier": "^2.5.1"
   }
 }
