@@ -5,8 +5,8 @@ import { getBallotData } from './services/ballot'
 import { AppWrapper } from './App.style'
 import { IAwardResponses, TMovieNominated } from './interfaces'
 
-const AwardList = lazy(() => import('./components/AwardList'))
-const AwardModal = lazy(() => import('./components/AwardModal'))
+const AwardList = lazy(() => import('./Components/AwardList'))
+const AwardModal = lazy(() => import('./Components/AwardModal'))
 
 function App() {
   const [awardData, setAwardData] = useState<IAwardResponses['items']>([])
