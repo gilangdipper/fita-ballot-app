@@ -3,8 +3,15 @@ import styled from 'styled-components'
 export const AwardListWrapper = styled.div`
   width: 100%;
 
+  .award-title {
+    font-size: 26px;
+    text-align: center;
+    padding: 26px 10px 40px;
+    font-weight: bold;
+  }
+
   .award-section {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 
     .title {
       font-size: 24px;

@@ -11,6 +11,7 @@ const AwardList: FC<IAwardList> = ({
 }) => {
   return (
     <AwardListWrapper>
+      <div className="award-title">AWARDS {new Date().getFullYear()}</div>
       <Suspense fallback={<div>Page is Loading...</div>}>
         {awardData.map((award) => (
           <div key={award.id} className="award-section">
