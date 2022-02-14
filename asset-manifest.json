@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/fita-ballot-app/static/css/main.73b58c1b.css",
+    "main.js": "/fita-ballot-app/static/js/main.2097a65e.js",
+    "static/js/290.d9941009.chunk.js": "/fita-ballot-app/static/js/290.d9941009.chunk.js",
+    "static/js/493.d1f49853.chunk.js": "/fita-ballot-app/static/js/493.d1f49853.chunk.js",
+    "static/js/377.b4785dfd.chunk.js": "/fita-ballot-app/static/js/377.b4785dfd.chunk.js",
+    "index.html": "/fita-ballot-app/index.html",
+    "main.73b58c1b.css.map": "/fita-ballot-app/static/css/main.73b58c1b.css.map",
+    "main.2097a65e.js.map": "/fita-ballot-app/static/js/main.2097a65e.js.map",
+    "290.d9941009.chunk.js.map": "/fita-ballot-app/static/js/290.d9941009.chunk.js.map",
+    "493.d1f49853.chunk.js.map": "/fita-ballot-app/static/js/493.d1f49853.chunk.js.map",
+    "377.b4785dfd.chunk.js.map": "/fita-ballot-app/static/js/377.b4785dfd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.73b58c1b.css",
+    "static/js/main.2097a65e.js"
+  ]
+}
