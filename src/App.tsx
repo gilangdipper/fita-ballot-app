@@ -1,12 +1,12 @@
-import { useEffect, useState } from 'react'
+import { lazy, Suspense, useEffect, useState } from 'react'
 
 import { getBallotData } from './services/ballot'
 
-import AwardList from './components/AwardList'
-import AwardModal from './components/AwardModal'
-
 import { AppWrapper } from './App.style'
 import { IAwardResponses, TMovieNominated } from './interfaces'
+
+const AwardList = lazy(() => import('./components/AwardList'))
+const AwardModal = lazy(() => import('./components/AwardModal'))
 
 function App() {
   const [awardData, setAwardData] = useState<IAwardResponses['items']>([])
@@ -29,22 +29,24 @@ function App() {
   }, [])
   return (
     <AppWrapper>
-      <AwardList
-        awardData={awardData}
-        nominateMovie={(categoryId, movie) =>
-          setMovieNominated((previousState) => ({
-            ...previousState,
-            [categoryId]: movie,
-          }))
-        }
-        movieNominated={movieNominated}
-        displayModal={() => setIsModalShow(true)}
-      />
-      <AwardModal
-        isShow={isModalShow}
-        closeModal={() => setIsModalShow(false)}
-        movieNominated={movieNominated}
-      />
+      <Suspense fallback={<div>Page is Loading...</div>}>
+        <AwardList
+          awardData={awardData}
+          nominateMovie={(categoryId, movie) =>
+            setMovieNominated((previousState) => ({
+              ...previousState,
+              [categoryId]: movie,
+            }))
+          }
+          movieNominated={movieNominated}
+          displayModal={() => setIsModalShow(true)}
+        />
+        <AwardModal
+          isShow={isModalShow}
+          closeModal={() => setIsModalShow(false)}
+          movieNominated={movieNominated}
+        />
+      </Suspense>
     </AppWrapper>
   )
 }
